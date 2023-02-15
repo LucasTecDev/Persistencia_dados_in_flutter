@@ -44,7 +44,7 @@ class _ProdutoCRUDPageState extends State<ProdutoCRUDPage> {
               ),
             ),
             ConstrainedBox(
-              constraints: BoxConstraints.tightFor(width: 200, height: 80),
+              constraints: BoxConstraints.tightFor(width: 200, height: 60),
               child: ElevatedButton.icon(
                 icon: Icon(Icons.save),
                 label: Text("Gravar"),
