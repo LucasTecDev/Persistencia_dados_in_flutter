@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 
-class CheckBoxWidget extends StatelessWidget {
-  const CheckBoxWidget({super.key});
+class CheckBoxWidget extends StatefulWidget {
+  @override
+  State<CheckBoxWidget> createState() => _CheckBoxWidgetState();
+}
+
+class _CheckBoxWidgetState extends State<CheckBoxWidget> {
+  bool _checked = false;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Checkbox(value: false, onChanged: (value) {}),
+        Checkbox(
+          value: _checked,
+          onChanged: (value) {
+            setState(() {
+                _checked = !_checked;
+            });
+          }),
         Text('Não exibir mais'),
       ],
     );

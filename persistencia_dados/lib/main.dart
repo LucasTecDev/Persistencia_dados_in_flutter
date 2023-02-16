@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'PeF Pratication',
       theme: ThemeData(
-        primaryColor: Colors.indigo.shade900
+        primaryColor: Colors.indigo.shade900,
+        buttonColor: Colors.blue.shade500
       ),
       home: WelcomePage(),
     );

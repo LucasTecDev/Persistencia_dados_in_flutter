@@ -7,12 +7,15 @@ class BrandTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-        'Guarda Senha',
-        style: TextStyle(
-        fontSize: 50,
-        color: Theme.of(context).primaryColor,
-        fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+          'Guarda Senha',
+          style: TextStyle(
+          fontSize: 50,
+          color: Theme.of(context).primaryColor,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
