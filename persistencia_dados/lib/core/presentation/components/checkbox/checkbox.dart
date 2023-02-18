@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CheckBoxWidget extends StatefulWidget {
+  final Function(bool) onChanged;
+
+  const CheckBoxWidget({required this.onChanged});
   @override
   State<CheckBoxWidget> createState() => _CheckBoxWidgetState();
 }
@@ -18,6 +21,8 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget> {
             setState(() {
                 _checked = !_checked;
             });
+
+            widget.onChanged(_checked);
           }),
         Text('Não exibir mais'),
       ],

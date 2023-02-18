@@ -11,7 +11,8 @@ class _ProdutoCRUDPageState extends State<ProdutoCRUDPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Dados de Produtos"),
+      appBar: AppBar(
+        title: Text("Adicione ou atualize uma conta"),
       ),
       //Nome,Descricao,Valor,Imagem
       body: Padding( 
@@ -21,11 +22,11 @@ class _ProdutoCRUDPageState extends State<ProdutoCRUDPage> {
           children: [
             Container(child: Column(
               children: [
-                TextFormField(decoration: InputDecoration(labelText: 'Nome'),
+                TextFormField(decoration: InputDecoration(labelText: 'Nome da aplicacao'),
                 ),
-                TextFormField(decoration: InputDecoration(labelText: 'Descricao'),
+                TextFormField(decoration: InputDecoration(labelText: 'Email'),
                 ),
-                TextFormField(decoration: InputDecoration(labelText: 'Valor'),
+                TextFormField(decoration: InputDecoration(labelText: 'Senha'),
                 ),
               ],
             )

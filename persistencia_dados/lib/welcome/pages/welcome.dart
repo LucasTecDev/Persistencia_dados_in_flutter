@@ -8,7 +8,7 @@ import 'package:persistencia_dados/welcome/data/datasources/welcome_datasource.d
 import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+  bool _checkedBoxValue = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,9 @@ class WelcomePage extends StatelessWidget {
   _buildBottomRow(BuildContext context) {
     return Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        CheckBoxWidget(),
+        CheckBoxWidget(onChanged: (value) {
+          _checkedBoxValue = value;
+        },),
         DeafaultTextButton(
           text: 'Avançar',
           textFontSize: 24,
@@ -50,9 +52,9 @@ class WelcomePage extends StatelessWidget {
             var sp = await SharedPreferences.getInstance();
             var ds = WelcomeDataSource(sharedPreferences: sp);
 
-            await ds.registerDontShowAgain(value: true);
+            await ds.registerDontShowAgain(value: _checkedBoxValue);
 
-            Navigator.push(context,
+            Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => ProdutoCRUDPage()));
            },
           )

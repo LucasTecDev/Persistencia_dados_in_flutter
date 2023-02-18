@@ -11,7 +11,7 @@ class WelcomeDataSource {
    await sharedPreferences.setBool('dontShowAgain', value);
   }
 
-  getDontShowAgain() {
+  bool getDontShowAgain() {
     return sharedPreferences.getBool(kDontShowAgainKey)??false;
   }
 }
